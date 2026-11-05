@@ -54,7 +54,8 @@ button,input,select,textarea{font:inherit;color:inherit}
 .top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--surface);border-bottom:1px solid var(--line)}
 .top .inner{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:64px;padding-block:8px}
 .brand{display:flex;align-items:center;gap:10px;font-family:var(--f-display);font-weight:800;font-size:1.25rem;letter-spacing:-.02em;text-decoration:none}
-.brand svg{flex:none}
+.brand-logo{display:block;flex:none;width:92px;height:58px;object-fit:contain;border-radius:8px;background:#07182e}
+@media(max-width:420px){.brand-logo{width:66px;height:44px}.brand{gap:6px}.brand span{font-size:.94rem}}
 .nav{display:flex;gap:22px;font-weight:500;font-size:.96rem}
 .nav a{text-decoration:none;color:var(--muted)}
 .nav a:hover{color:var(--fg)}
@@ -258,7 +259,7 @@ td.n,th.n{text-align:right;font-family:var(--f-mono);font-variant-numeric:tabula
 <header class="top band">
   <div class="inner">
     <a class="brand" href="#top-of-page" id="brandLink" aria-label="Kalamu Writers home">
-      <svg width="34" height="34" viewBox="0 0 34 34" role="img" aria-hidden="true"><rect width="34" height="34" rx="9" fill="var(--primary)"/><path d="M17 6.5c3.6 3.7 5.4 7.3 5.4 11.2 0 2.2-.7 4.2-2.1 6l-3.3 3.3-3.3-3.3a9.6 9.6 0 0 1-2.1-6c0-3.9 1.8-7.5 5.4-11.2Z" fill="var(--primary-fg)"/><circle cx="17" cy="16.5" r="1.9" fill="var(--primary)"/><path d="M17 18.4v7" stroke="var(--primary)" stroke-width="1.6" stroke-linecap="round"/><rect x="7" y="27.2" width="20" height="2.4" rx="1.2" fill="var(--amber)"/></svg>
+      <img class="brand-logo" src="./assets/kalamu-writers-logo.svg" alt="Kalamu Writers logo: laptop, book and pen" width="92" height="58" decoding="async">
       <span>Kalamu Writers</span>
     </a>
     <nav class="nav" id="mainNav" aria-label="Sections">
