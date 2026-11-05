@@ -7,3 +7,7 @@ Files: `index.html`, `admin.html`, `kalamu-client.js`, `kalamu-admin.js`.
 **Security warning:** This is an unverified frontend. The server-side operations and database RLS must be audited and tested before handling real payments, uploads or withdrawals. M-Pesa SMS alone is not payment verification. The PDF/DOCX upload path is not yet fully implemented.
 
 Deploy with Vercel as a static site. Keep privileged Edge Functions in Supabase; deploy only audited functions through a private backend workflow.
+
+## Security and deployment
+
+A submitted M-Pesa SMS is an unverified payment claim. Only authorized administrative review after independent payment verification can grant task access. Do not deploy demo shortcuts or expose Supabase service-role credentials.
