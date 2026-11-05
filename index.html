@@ -264,7 +264,7 @@ td.n,th.n{text-align:right;font-family:var(--f-mono);font-variant-numeric:tabula
     <nav class="nav" id="mainNav" aria-label="Sections">
       <a href="#how-it-works">How it works</a>
       <a href="#packages">Packages</a>
-      <a href="#earnings">Earnings</a>
+      
       <a href="#faq">FAQ</a>
     </nav>
     <div class="actions" id="hdrActions"></div>
@@ -276,128 +276,82 @@ td.n,th.n{text-align:right;font-family:var(--f-mono);font-variant-numeric:tabula
   <section class="hero band">
     <div class="inner on-hero">
       <div>
-        <p class="eyebrow" style="color:var(--hero-muted)">Online writing tasks, paid in Kenyan shillings</p>
-        <h1 style="margin-top:14px">Get paid for <em>every word</em> we approve.</h1>
-        <p class="lede">Register, claim writing tasks from your dashboard, write to the brief and submit. When your assignment is approved, you are paid by the word.</p>
+        <p class="eyebrow" style="color:var(--hero-muted)">Writing project practice platform</p>
+        <h1 style="margin-top:14px">Build your writing skills on <em>realistic projects.</em></h1>
+        <p class="lede">Create a free account, explore assignments across three skill tiers, claim an available practice project, and submit your writing for an administrator to review.</p>
         <div class="cta">
-          <button class="btn btn-amber" data-auth="register" data-pkg="starter">Register for KES 500</button>
-          <a class="btn btn-ghost" href="#packages">See the three packages</a>
+          <button class="btn btn-amber" data-auth="register">Create free account</button>
+          <a class="btn btn-ghost" href="#packages">Explore the project tiers</a>
         </div>
         <ul class="facts">
-          <li>Registration from KES 500</li>
-          <li>Pay is per approved word</li>
-          <li>Claim tasks from your own dashboard</li>
+          <li>No payment to register or practise</li>
+          <li>33 writing practice projects</li>
+          <li>Submission and review tracking</li>
         </ul>
       </div>
-      <aside class="slip" aria-label="Example of a paid task">
-        <p class="eyebrow">Example task slip</p>
-        <h3>Product description: solar lanterns</h3>
-        <span class="stamp">APPROVED</span>
+      <aside class="slip" aria-label="Sample assignment preview">
+        <p class="eyebrow">Project preview</p>
+        <h3>Product copy: solar reading lamp</h3>
+        <span class="stamp">PRACTICE</span>
         <dl>
-          <div class="r"><dt>Length</dt><dd id="slipWords">500 words</dd></div>
-          <div class="r"><dt>Package</dt><dd id="slipPkg">Standard</dd></div>
-          <div class="r"><dt>Rate</dt><dd id="slipRate">KES 0.30 / word</dd></div>
+          <div class="r"><dt>Required length</dt><dd>350 words</dd></div>
+          <div class="r"><dt>Tier</dt><dd>Starter</dd></div>
+          <div class="r"><dt>Project amount</dt><dd>KES 280 (illustrative)</dd></div>
         </dl>
-        <div class="total"><span>Paid on approval</span><b id="slipTotal">KES 150</b></div>
-        <p class="note">An example of how pay is worked out. It is not a promise of work or earnings.</p>
+        <p class="note">This is a simulated assignment. The amount shows a project example; practice work is not paid and does not create a withdrawable balance.</p>
       </aside>
     </div>
   </section>
-
   <div class="band"><div class="inner">
     <div class="rules">
-      <div><h3>Paid by the word</h3><p>Your pay is the word count of your assignment multiplied by your package rate.</p></div>
-      <div><h3>Only approved work is paid</h3><p>Every submission is reviewed. Work that is not approved is not paid.</p></div>
-      <div><h3>Three packages</h3><p>A higher package gives you more tasks each day and a higher rate per word.</p></div>
+      <div><h3>Learn through projects</h3><p>Practice briefs range from product writing to technical and policy research.</p></div>
+      <div><h3>See higher tiers</h3><p>All registered learners can view higher-tier briefs, even when not eligible to claim them.</p></div>
+      <div><h3>Track reviews</h3><p>The admin panel records claims, upgrade attempts, submissions and editorial decisions.</p></div>
     </div>
   </div></div>
-
   <section class="s band" id="how-it-works">
     <div class="inner">
-      <div class="sh"><p class="eyebrow">How it works</p><h2>From registration to payment in four steps</h2></div>
+      <div class="sh"><p class="eyebrow">How it works</p><h2>Try the writing workflow without payment</h2></div>
       <ol class="steps">
-        <li><h3>Register</h3><p>Create your account and pay the registration fee for the package you choose.</p></li>
-        <li><h3>Claim a task</h3><p>Open your dashboard and claim tasks, up to the daily limit of your package.</p></li>
-        <li><h3>Write and submit</h3><p>Write to the brief, reach the required word count and submit from any phone or computer.</p></li>
-        <li><h3>Get paid</h3><p>When your assignment is approved, your earnings are added at your package rate per word.</p></li>
+        <li><h3>Create an account</h3><p>Register for free. If email confirmation is enabled, confirm your address before signing in.</p></li>
+        <li><h3>Browse projects</h3><p>See Starter, Standard and Premium project briefs and illustrative project amounts.</p></li>
+        <li><h3>Claim and write</h3><p>Claim projects available to your assigned practice tier and submit writing against each brief.</p></li>
+        <li><h3>Get feedback</h3><p>Administrators review your practice submission. No payment or cash earnings result from this trial.</p></li>
       </ol>
     </div>
   </section>
-
   <section class="s alt band" id="packages">
     <div class="inner">
-      <div class="sh"><p class="eyebrow">Packages</p><h2>Choose the package that fits how much you want to write</h2><p>Pay the registration fee for your package, submit the complete M-Pesa confirmation SMS, and wait for administrator verification before claiming tasks. The package sets your daily task limit and the rate paid for each approved word.</p></div>
+      <div class="sh"><p class="eyebrow">Project tiers</p><h2>Explore 33 progressive writing assignments</h2>
+      <p>Starter (KES 500), Standard (KES 1,500) and Premium (KES 30,000) are illustrative package benchmarks, not fees collected for this practice trial. New users start in Starter. Higher tiers are assigned by administrators. These projects are not paid assignments.</p></div>
       <div class="pk" id="pkGrid"></div>
     </div>
   </section>
-
-  <section class="s band" id="earnings">
-    <div class="inner">
-      <div class="sh"><p class="eyebrow">Earnings calculator</p><h2>Work out what approved tasks could pay</h2><p>Pick a package and see what a day of approved work adds up to, and how many approved words it takes to cover your registration fee.</p></div>
-      <div class="calc">
-        <div>
-          <span class="legend" id="calcLegend">Package</span>
-          <div class="seg" role="radiogroup" aria-labelledby="calcLegend" id="calcSeg"></div>
-          <div class="rg"><label for="calcTasks"><span>Approved tasks per day</span><span class="mono" id="calcTasksV"></span></label><input type="range" id="calcTasks" min="1" max="2" step="1" value="1"></div>
-          <div class="rg"><label for="calcWords"><span>Words per task</span><span class="mono" id="calcWordsV"></span></label><input type="range" id="calcWords" min="300" max="1000" step="100" value="500"></div>
-        </div>
-        <div class="out" aria-live="polite">
-          <div class="row"><div class="lbl">One day of approved work</div><div class="big" id="outDay"></div></div>
-          <div class="row"><div class="lbl">Six days in a week</div><div class="big" id="outWeek"></div></div>
-          <div class="row"><div class="lbl">Approved words to cover your registration fee</div><div class="big" id="outCover"></div></div>
-          <p class="fine">This is an estimate. You are paid only for assignments that are approved, and you can claim only as many tasks a day as your package allows.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="s alt band" id="standards">
     <div class="inner">
-      <div class="sh"><p class="eyebrow">Standards</p><h2>What gets approved, and what we tell you up front</h2></div>
+      <div class="sh"><p class="eyebrow">Review standards</p><h2>What administrators will assess</h2></div>
       <div class="two">
-        <div class="panel-l"><h3>Work we approve</h3>
-          <ul class="ticks">
-            <li>Original writing, in your own words</li>
-            <li>Follows the task brief and stays on topic</li>
-            <li>Reaches the required word count</li>
-            <li>Clear, correct language that suits the task</li>
-          </ul>
-        </div>
-        <div class="panel-l"><h3>Before you register</h3>
-          <ul class="ticks info">
-            <li>Your earnings depend on approved work. Work that is not approved is not paid.</li>
-            <li>Your package decides your daily task limit and your rate per word.</li>
-            <li>The registration fee is paid before you can claim tasks.</li>
-            <li>You can see your claimed tasks, submissions and earnings in your dashboard at any time.</li>
-          </ul>
-        </div>
+        <div class="panel-l"><h3>Your writing</h3><ul class="ticks"><li>Original text addressing the brief</li><li>Required word count and clear structure</li><li>Evidence handling and factual accuracy</li><li>Professional presentation and readability</li></ul></div>
+        <div class="panel-l"><h3>Practice limitations</h3><ul class="ticks info"><li>Registration and practice do not require payment.</li><li>Amounts shown beside practice projects are illustrative.</li><li>Practice submissions cannot generate wages or withdrawal balances.</li><li>Tier upgrades require an administrator to assign a higher package.</li></ul></div>
       </div>
     </div>
   </section>
-
   <section class="s band" id="faq">
     <div class="inner">
-      <div class="sh"><p class="eyebrow">Questions</p><h2>Answers before you register</h2></div>
+      <div class="sh"><p class="eyebrow">FAQ</p><h2>Practice project access</h2></div>
       <div class="faq">
-        <details><summary>How much will I be paid?</summary><p>You are paid by the word for each approved assignment. Multiply the word count by the rate of your package: Starter, Standard or Premium. The calculator above shows examples.</p></details>
-        <details><summary>When is a task approved?</summary><p>After you submit, your assignment is reviewed against the brief, the word count and the standards listed above. Approved work is added to your earnings. Work that is not approved is not paid.</p></details>
-        <details><summary>How many tasks can I claim?</summary><p>Each package has a daily limit. Starter has the fewest tasks a day, Standard has more, and Premium has the most. You claim tasks yourself from the Tasks tab of your dashboard.</p></details>
-        <details><summary>What do I pay to register?</summary><p>Registration is KES 500 for Starter, KES 1,500 for Standard and KES 3,000 for Premium. Choose one when you register.</p></details>
-        <details><summary>How do I see what I have earned?</summary><p>Your dashboard has an Earnings tab that lists each submission, its word count, the amount and its status. Your available balance is shown at the top.</p></details>
+        <details><summary>Is registration free?</summary><p>Yes. No registration payment or M-Pesa message is required for this practice phase.</p></details>
+        <details><summary>Are these paid projects?</summary><p>No. These are practice assignments with illustrative amounts for evaluating the platform. Submissions do not create earnings.</p></details>
+        <details><summary>Can I view higher-tier projects?</summary><p>Yes. All active learners can view all project briefs. Claiming higher-tier projects requires an administrator-assigned higher tier.</p></details>
+        <details><summary>Can I claim a project immediately?</summary><p>Once registered and signed in, active Starter users can claim eligible Starter practice assignments, subject to their daily claim limit.</p></details>
+        <details><summary>How are submissions tracked?</summary><p>Your dashboard records claimed projects, submissions and feedback. Administrators can view claim activity and editorial decisions.</p></details>
       </div>
     </div>
   </section>
-
   <section class="endcta band">
-    <div class="inner">
-      <h2>Ready to write? Register and claim your first task.</h2>
-      <div style="display:flex;gap:12px;flex-wrap:wrap" class="on-hero">
-        <button class="btn btn-amber" data-auth="register" data-pkg="starter">Register for payment review</button>
-        <button class="btn btn-ghost" data-auth="login">I already have an account</button>
-      </div>
-    </div>
+    <div class="inner"><h2>Ready to practise writing?</h2><div style="display:flex;gap:12px;flex-wrap:wrap" class="on-hero"><button class="btn btn-amber" data-auth="register">Create free account</button><button class="btn btn-ghost" data-auth="login">Log in</button></div></div>
   </section>
-  <footer class="foot band"><div class="inner"><span>&copy; 2026 Kalamu Writers</span><span>All amounts are in Kenyan shillings (KES).</span></div></footer>
+  <footer class="foot band"><div class="inner"><span>&copy; 2026 Kalamu Writers</span><span>Free practice projects · No cash payouts</span></div></footer>
 </main>
 
 <main id="member" class="mem band" hidden>
@@ -414,23 +368,21 @@ td.n,th.n{text-align:right;font-family:var(--f-mono);font-variant-numeric:tabula
     </div>
 
     <form id="regForm" novalidate>
-      <div class="err" id="regErr" role="alert"></div>
-      <div class="fld"><label for="rName">Full name</label><input id="rName" autocomplete="name" required></div>
-      <div class="fld"><label for="rPhone">Phone number</label><input id="rPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="0712 345 678" required><div class="hint">Use the number you receive M-Pesa on.</div></div>
-      <div class="fld"><label for="rEmail">Email</label><input id="rEmail" type="email" autocomplete="email" required></div>
-      <div class="fld"><label for="rPass">Password</label><input id="rPass" type="password" autocomplete="new-password" minlength="6" required><div class="hint">At least 6 characters.</div></div>
-      <span class="legend" id="rPkgLegend">Package</span>
-      <div class="opts" id="rPkgs" role="radiogroup" aria-labelledby="rPkgLegend"></div>
-      <div class="fld"><label for="pSmsRegister">Complete M-Pesa confirmation SMS</label><textarea id="pSmsRegister" name="mpesa_message" rows="4" required placeholder="Paste the entire payment confirmation SMS"></textarea><div class="hint">Submitting a message does not verify payment. An administrator checks the transaction independently before activating access.</div></div>
-      <button class="btn btn-primary btn-block" type="submit">Submit for administrator review</button>
-    </form>
+  <div class="err" id="regErr" role="alert"></div>
+  <div class="fld"><label for="rName">Full name</label><input id="rName" autocomplete="name" required></div>
+  <div class="fld"><label for="rPhone">Phone number (optional)</label><input id="rPhone" type="tel" inputmode="tel" autocomplete="tel"></div>
+  <div class="fld"><label for="rEmail">Email</label><input id="rEmail" type="email" autocomplete="email" required></div>
+  <div class="fld"><label for="rPass">Password</label><input id="rPass" type="password" autocomplete="new-password" minlength="8" required><div class="hint">At least 8 characters.</div></div>
+  <p class="hint">Your account starts on the Starter practice tier. No M-Pesa or registration fee is required.</p>
+  <button class="btn btn-primary btn-block" type="submit">Create free account</button>
+</form>
 
     <form id="loginForm" novalidate hidden>
       <div class="err" id="logErr" role="alert"></div>
       <div class="fld"><label for="lEmail">Email</label><input id="lEmail" type="email" autocomplete="email" required></div>
       <div class="fld"><label for="lPass">Password</label><input id="lPass" type="password" autocomplete="current-password" required></div>
       <button class="btn btn-primary btn-block" type="submit">Log in</button><p style="margin-top:12px"><button type="button" class="linkbtn" id="resendConfirmation">Resend email confirmation</button></p>
-      <p style="margin-top:14px;text-align:center;color:var(--muted)">New here? <button type="button" class="linkbtn" data-mode="register">Register for KES 500 or more</button></p>
+      <p style="margin-top:14px;text-align:center;color:var(--muted)">New here? <button type="button" class="linkbtn" data-mode="register">Create a free account</button></p>
     </form>
   </div>
 </div>
