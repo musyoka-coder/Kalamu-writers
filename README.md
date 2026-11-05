@@ -26,3 +26,5 @@ Submission text is reviewed by the administrator; users cannot self-approve or c
 To deploy manually: sign in to Vercel with the owner account, open https://vercel.com/new, select team `musyokas-projects-0b14d658`, import `musyoka-coder/Kalamu-writers`, choose framework **Other** with repository root as source, and deploy. After deployment, the admin portal is `https://<your-deployed-domain>/admin.html`.
 
 Before taking real registration fees, publish verified paid assignments and test email confirmation, payment approval, submissions, withdrawal reservations and administrator invitations with controlled test accounts.
+
+Deployment status: production release requires verified Vercel project and end-to-end payment review testing.
