@@ -1,39 +1,43 @@
 # Kalamu Writers
 
-This repository contains the static web frontend, the real admin dashboard, and the tracked Supabase Edge Function source.
+A static frontend backed by Supabase Auth, PostgreSQL/RLS and the `kalamu-ops` Edge Function. **Currently in free practice / workflow-testing mode.**
 
-## Frontend
-- `index.html`, `kalamu-client.js`: registration, verified login, payment-review status, task browsing and tier upgrades, submission status and earnings.
-- `admin.html`, `kalamu-admin.js`: real Supabase administrator login, payment review, task publishing and tier/payout settings, submission review, administrator account creation, suspension/reactivation and account controls.
-- The browser uses a public Supabase publishable key. **Never add a service-role key or other secret to this repository.**
+## What is available
 
-## Live backend
-Supabase project: `lrwnhpdkaplrwisiyroo`. The active `kalamu-ops` Edge Function is version 10 (2026-11-06). The tracked source is synchronized with the deployed function. It includes browser CORS support for `x-client-info`, authenticated admin account creation, and Auth-level bans/unbans synchronized with profile status. It checks the authenticated user, confirmed email, active role, payment status, and package entitlement. Sensitive payment reviews, submission approval and withdrawal reservations use restricted database functions that execute as a single transaction.
+- **Free signup and login**: full name, optional phone, email and password. No M-Pesa SMS, payment or fee during this phase. Email verification remains subject to Supabase Auth settings.
+- **Tier catalog**: 8 Starter (KES 500 benchmark), 10 Standard (KES 1,500), and 15 Premium (KES 30,000) active practice projects. The amounts in project cards are illustrative, not wages.
+- **Access**: new accounts are Starter. An authenticated, active learner can see the full catalog and claim their tier's work within the daily limit. Higher-tier attempts are saved and present an upgrade requirement; admins assign tiers through Supabase.
+- **Submission testing**: learners paste text, submit for editorial review and view feedback. Admins see claim/submission/upgrade attempts; review a practice submission without generating earnings.
+- **Role permissions**: the existing owner is `super_admin`. Additional `admin` accounts are created and assigned through Supabase only. No create-admin control or endpoint is exposed by the website.
+- **Audit history**: admin activity records show the actor, action, time, target and reason. Suspension records include `suspended_by` and `suspended_at`. Auth-level account ban/unban accompanies application status.
+- **Safety**: practice submissions are non-payable and do not affect withdrawal balances. Payment and withdrawal Edge Function actions are disabled for this phase. Users cannot approve their own assignments.
 
-New users submit the complete M-Pesa confirmation SMS during signup. The database records **pending**, never automatically approved. Admin approval is only appropriate after checking the real Safaricom/M-Pesa statement. The SMS alone does **not** establish payment. Email confirmation is also required.
+## Project files
 
-Package access: Starter KES 500, Standard KES 1,500, Premium KES 3,000. An approved higher tier can claim eligible lower-tier tasks. A lower-tier member can submit an upgrade request, but the tier changes only after payment approval.
+| Path | Function |
+| --- | --- |
+| `index.html`, `kalamu-client.js` | Free signup, practice projects, tier access, submissions |
+| `admin.html`, `kalamu-admin.js` | Admin login, project activity, editorial review and audit history |
+| `supabase/functions/kalamu-ops/index.ts` | Supabase Edge Function (**deployed version 12**) |
+| `supabase/seed/free_practice_catalog.sql` | Repeatable SQL seed for the 33 practice assignments |
+| `supabase/ADMIN_SETUP.md` | Direct Supabase admin provisioning and practice-tier assignment |
+| `assets/kalamu-writers-logo.svg` | Logo/favicon |
 
-Submission text is reviewed by the administrator; users cannot self-approve or create earnings. The AI indicator is a **demonstration writing-pattern heuristic**, not a scientifically validated detector or proof of AI authorship. The administrator records an AI score, note, deduction and final award within the advertised task payout range. Withdrawal requests are reservations, **not automated M-Pesa payouts**.
+## Tested in the connected Supabase project
 
-## Production status — 2026-11-05
-- GitHub code changes committed to the `main` branch.
-- Supabase schema/permissions and Edge Function deployed.
-- 40 unclaimed demo tasks closed; no verified real tasks currently open.
-- Vercel connector can read the team but returns **403 Forbidden** for project creation and production deployment. The updated frontend has **not** been deployed through this connection.
-- The prior Vercel admin URL is not currently verified.
+- Three-tier catalog counts confirmed: **8 / 10 / 15** live practice tasks.
+- Learner role can read the live practice catalog; unauthorized users cannot read the catalog through its Data API permissions.
+- Transactional practice review returned **approved** with **KES 0 payable**; all test inserts were rolled back.
+- Edge Function v12 deployed with auth checks and the browser `x-client-info` CORS header.
+- JS syntax checks pass for browser scripts and Edge Function (with Deno TS assertions stripped for parsing).
+- **Not yet tested end-to-end**: full browser signup, real admin role setup, claim/submission with Supabase session, and account suspension using separate test users.
 
-The Vercel project-creation endpoint returned **403 Forbidden** again on 2026-11-06, so frontend production deployment is **not** confirmed. Code merges to GitHub do not imply a live release.
+## Production deployment
 
-To deploy manually: sign in to Vercel with the owner account, open https://vercel.com/new, select team `musyokas-projects-0b14d658`, import `musyoka-coder/Kalamu-writers`, choose framework **Other** with repository root as source, and deploy. After deployment, the admin portal is `https://<your-deployed-domain>/admin.html`.
+Changes are pushed to GitHub. The connected Vercel team **does not have this project**, and its project-creation API returned **403 Forbidden**. Frontend deployment is **not confirmed**.
 
-Before taking real registration fees, publish verified paid assignments and test email confirmation, payment approval, submissions, withdrawal reservations and administrator creation and learner suspension/reactivation with controlled test accounts.
+To deploy with the authorized account, import this GitHub repo at https://vercel.com/new, use framework **Other**, root directory `/`, and deploy. The admin portal is `https://<deployed-domain>/admin.html`.
 
-Deployment status: production release requires verified Vercel project and end-to-end payment review testing.
+Set the deployed origin in Supabase **Authentication → URL Configuration**, including Site URL and the allowed Redirect URLs for email verification. If the project requires immediate session creation at sign-up instead of confirming email, that depends on Supabase's Auth email-confirmation setting; it was **not changed** through the connector.
 
-## Admin regression checks (2026-11-06)
-- Static JavaScript syntax checks passed for `kalamu-admin.js`, `kalamu-client.js`, and `supabase/functions/kalamu-ops/index.ts` (after removing TypeScript non-null assertions for JS parsing).
-- Supabase `kalamu-ops` version 10 is deployed and its code matches the tracked source. The `x-client-info` CORS preflight header was missing before version 8.
-- The database currently has one active verified super admin, two active learners, and no ordinary administrator accounts or stored payments. Do not infer real end-to-end success from these counts.
-- Live checks still required: create an isolated administrator through the super-admin panel; log in as that account; suspend/reactivate a controlled learner; submit M-Pesa evidence for independent review; verify email redirect and delivery from the deployed domain.
-- Suspension bans future sign-ins with Supabase Auth; existing access tokens may remain valid until expiration, so the Edge Function and task RLS also enforce active status.
+This is a practice/testing service. No claim that practice projects provide actual client work or payable income should be made.
