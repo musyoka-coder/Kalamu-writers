@@ -325,7 +325,7 @@ td.n,th.n{text-align:right;font-family:var(--f-mono);font-variant-numeric:tabula
 
   <section class="s alt band" id="packages">
     <div class="inner">
-      <div class="sh"><p class="eyebrow">Packages</p><h2>Choose the package that fits how much you want to write</h2><p>Pay the registration fee for your package, then start claiming tasks. The package sets your daily task limit and the rate paid for each approved word.</p></div>
+      <div class="sh"><p class="eyebrow">Packages</p><h2>Choose the package that fits how much you want to write</h2><p>Pay the registration fee for your package, submit the complete M-Pesa confirmation SMS, and wait for administrator verification before claiming tasks. The package sets your daily task limit and the rate paid for each approved word.</p></div>
       <div class="pk" id="pkGrid"></div>
     </div>
   </section>
@@ -391,7 +391,7 @@ td.n,th.n{text-align:right;font-family:var(--f-mono);font-variant-numeric:tabula
     <div class="inner">
       <h2>Ready to write? Register and claim your first task.</h2>
       <div style="display:flex;gap:12px;flex-wrap:wrap" class="on-hero">
-        <button class="btn btn-amber" data-auth="register" data-pkg="starter">Register and start earning</button>
+        <button class="btn btn-amber" data-auth="register" data-pkg="starter">Register for payment review</button>
         <button class="btn btn-ghost" data-auth="login">I already have an account</button>
       </div>
     </div>
@@ -420,17 +420,8 @@ td.n,th.n{text-align:right;font-family:var(--f-mono);font-variant-numeric:tabula
       <div class="fld"><label for="rPass">Password</label><input id="rPass" type="password" autocomplete="new-password" minlength="6" required><div class="hint">At least 6 characters.</div></div>
       <span class="legend" id="rPkgLegend">Package</span>
       <div class="opts" id="rPkgs" role="radiogroup" aria-labelledby="rPkgLegend"></div>
-      <button class="btn btn-primary btn-block" type="submit">Continue to payment</button>
-    </form>
-
-    <form id="payForm" novalidate hidden>
-      <div class="err" id="payErr" role="alert"></div>
-      <div class="notice" id="previewNote" hidden>Preview version: no money is charged here. Enter any 10-character reference to continue.</div>
-      <div class="sum"><dl id="paySum"></dl></div>
-      <p style="margin-bottom:14px;color:var(--muted)" id="payHow"></p>
-      <div class="fld"><label for="pRef">M-Pesa confirmation code</label><input id="pRef" autocomplete="off" autocapitalize="characters" maxlength="10" placeholder="e.g. SGH4K7XYZ2" required><div class="hint">The 10-character code in the M-Pesa confirmation SMS.</div></div>
-      <button class="btn btn-primary btn-block" type="submit">Confirm and start earning</button>
-      <p style="margin-top:12px;text-align:center"><button type="button" class="linkbtn" id="payBack">Back to details</button></p>
+      <div class="fld"><label for="pSmsRegister">Complete M-Pesa confirmation SMS</label><textarea id="pSmsRegister" name="mpesa_message" rows="4" required placeholder="Paste the entire payment confirmation SMS"></textarea><div class="hint">Submitting a message does not verify payment. An administrator checks the transaction independently before activating access.</div></div>
+      <button class="btn btn-primary btn-block" type="submit">Submit for administrator review</button>
     </form>
 
     <form id="loginForm" novalidate hidden>
